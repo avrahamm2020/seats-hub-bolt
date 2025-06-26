@@ -42,7 +42,7 @@ const ChatWidget = () => {
           closeButtonTooltip: 'Close chat',
         }
       },
-      loadPreviousSession: false,
+      loadPreviousSession: true, // Enable chat history persistence
       metadata: {
         appName: 'Community App',
         userType: 'visitor'
