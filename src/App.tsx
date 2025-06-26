@@ -5,6 +5,7 @@ import SignUp from './pages/SignUp';
 import AdminDashboard from './pages/AdminDashboard';
 import MemberDashboard from './pages/MemberDashboard';
 import Navbar from './components/Navbar';
+import ChatWidget from './components/ChatWidget';
 import { UserProvider } from './context/UserContext';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/member" element={<MemberDashboard />} />
             <Route path="*" element={<Navigate to="/\" replace />} />
           </Routes>
+          <ChatWidget />
         </div>
       </Router>
     </UserProvider>
