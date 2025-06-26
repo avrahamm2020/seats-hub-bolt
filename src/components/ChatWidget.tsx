@@ -146,6 +146,7 @@ const ChatWidget = () => {
         box-shadow: 0 4px 8px rgba(30, 64, 175, 0.3) !important;
       }
       
+      /* AI Assistant Toggle Button - Main Fix */
       .n8n-chat-toggle {
         background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%) !important;
         border: none !important;
@@ -157,10 +158,28 @@ const ChatWidget = () => {
       }
       
       .n8n-chat-toggle:hover {
+        background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%) !important;
         transform: translateY(-2px) scale(1.05) !important;
         box-shadow: 0 12px 20px rgba(30, 64, 175, 0.4) !important;
       }
       
+      .n8n-chat-toggle:active {
+        background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%) !important;
+        transform: translateY(-1px) scale(1.02) !important;
+      }
+      
+      /* Force override any default toggle button styles */
+      .n8n-chat-toggle,
+      .n8n-chat-toggle button,
+      .n8n-chat-toggle > *,
+      [class*="toggle"],
+      [class*="fab"],
+      [class*="floating"] {
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%) !important;
+        background-color: #1e40af !important;
+      }
+      
+      /* Toggle Icon Styling */
       .n8n-chat-toggle svg {
         width: 24px !important;
         height: 24px !important;
@@ -168,10 +187,20 @@ const ChatWidget = () => {
         fill: #ffffff !important;
       }
       
-      /* Override any red colors in the chat widget */
-      .n8n-chat-toggle svg path {
+      .n8n-chat-toggle svg * {
         fill: #ffffff !important;
         stroke: #ffffff !important;
+        color: #ffffff !important;
+      }
+      
+      /* Override any red colors in the chat widget */
+      .n8n-chat-toggle svg path,
+      .n8n-chat-toggle svg circle,
+      .n8n-chat-toggle svg rect,
+      .n8n-chat-toggle svg polygon {
+        fill: #ffffff !important;
+        stroke: #ffffff !important;
+        color: #ffffff !important;
       }
       
       /* Bot avatar/icon styling */
@@ -194,16 +223,26 @@ const ChatWidget = () => {
         stroke: #ffffff !important;
       }
       
-      /* Ensure all icons use blue theme */
-      .n8n-chat svg {
-        color: #ffffff !important;
-      }
-      
+      /* Ensure all icons use blue theme - comprehensive override */
+      .n8n-chat svg,
+      .n8n-chat svg *,
       .n8n-chat .icon,
       .n8n-chat .bot-icon,
       .n8n-chat .assistant-icon {
         color: #ffffff !important;
         fill: #ffffff !important;
+        stroke: #ffffff !important;
+      }
+      
+      /* Remove any red background colors throughout the widget */
+      .n8n-chat [style*="background-color: red"],
+      .n8n-chat [style*="background: red"],
+      .n8n-chat [style*="background-color: #ff"],
+      .n8n-chat [style*="background: #ff"],
+      .n8n-chat [class*="red"],
+      .n8n-chat [class*="error"]:not(.n8n-chat-error) {
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%) !important;
+        background-color: #1e40af !important;
       }
       
       /* Scrollbar styling */
