@@ -168,27 +168,10 @@ const ChatWidget = () => {
         fill: #ffffff !important;
       }
       
-      /* Comprehensive icon color overrides - target all SVG elements */
-      .n8n-chat svg,
-      .n8n-chat svg * {
-        color: #ffffff !important;
+      /* Override any red colors in the chat widget */
+      .n8n-chat-toggle svg path {
         fill: #ffffff !important;
         stroke: #ffffff !important;
-      }
-      
-      /* Specific overrides for toggle button and all its children */
-      .n8n-chat-toggle svg,
-      .n8n-chat-toggle svg *,
-      .n8n-chat-toggle svg path,
-      .n8n-chat-toggle svg circle,
-      .n8n-chat-toggle svg rect,
-      .n8n-chat-toggle svg polygon,
-      .n8n-chat-toggle svg ellipse,
-      .n8n-chat-toggle svg line,
-      .n8n-chat-toggle svg polyline {
-        fill: #ffffff !important;
-        stroke: #ffffff !important;
-        color: #ffffff !important;
       }
       
       /* Bot avatar/icon styling */
@@ -200,47 +183,27 @@ const ChatWidget = () => {
       }
       
       .n8n-chat-avatar svg,
-      .n8n-chat-bot-avatar svg,
-      .n8n-chat-avatar svg *,
-      .n8n-chat-bot-avatar svg * {
+      .n8n-chat-bot-avatar svg {
         color: #ffffff !important;
         fill: #ffffff !important;
-        stroke: #ffffff !important;
       }
       
-      /* Override any default red colors that might be applied */
-      .n8n-chat [fill="#ff0000"],
-      .n8n-chat [fill="#dc2626"],
-      .n8n-chat [fill="#ef4444"],
-      .n8n-chat [fill="red"],
-      .n8n-chat [stroke="#ff0000"],
-      .n8n-chat [stroke="#dc2626"],
-      .n8n-chat [stroke="#ef4444"],
-      .n8n-chat [stroke="red"] {
+      .n8n-chat-avatar svg path,
+      .n8n-chat-bot-avatar svg path {
         fill: #ffffff !important;
         stroke: #ffffff !important;
       }
       
-      /* Ensure all icons use blue theme - comprehensive override */
+      /* Ensure all icons use blue theme */
+      .n8n-chat svg {
+        color: #ffffff !important;
+      }
+      
       .n8n-chat .icon,
       .n8n-chat .bot-icon,
-      .n8n-chat .assistant-icon,
-      .n8n-chat .chat-icon,
-      .n8n-chat .toggle-icon {
+      .n8n-chat .assistant-icon {
         color: #ffffff !important;
         fill: #ffffff !important;
-        stroke: #ffffff !important;
-      }
-      
-      /* Force override for any remaining red elements */
-      .n8n-chat * {
-        color: inherit !important;
-      }
-      
-      .n8n-chat-toggle * {
-        color: #ffffff !important;
-        fill: #ffffff !important;
-        stroke: #ffffff !important;
       }
       
       /* Scrollbar styling */
