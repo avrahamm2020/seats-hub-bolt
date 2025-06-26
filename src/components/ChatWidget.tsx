@@ -164,6 +164,46 @@ const ChatWidget = () => {
       .n8n-chat-toggle svg {
         width: 24px !important;
         height: 24px !important;
+        color: #ffffff !important;
+        fill: #ffffff !important;
+      }
+      
+      /* Override any red colors in the chat widget */
+      .n8n-chat-toggle svg path {
+        fill: #ffffff !important;
+        stroke: #ffffff !important;
+      }
+      
+      /* Bot avatar/icon styling */
+      .n8n-chat-avatar,
+      .n8n-chat-bot-avatar {
+        background-color: #3b82f6 !important;
+        color: #ffffff !important;
+        border: 2px solid #1e40af !important;
+      }
+      
+      .n8n-chat-avatar svg,
+      .n8n-chat-bot-avatar svg {
+        color: #ffffff !important;
+        fill: #ffffff !important;
+      }
+      
+      .n8n-chat-avatar svg path,
+      .n8n-chat-bot-avatar svg path {
+        fill: #ffffff !important;
+        stroke: #ffffff !important;
+      }
+      
+      /* Ensure all icons use blue theme */
+      .n8n-chat svg {
+        color: #ffffff !important;
+      }
+      
+      .n8n-chat .icon,
+      .n8n-chat .bot-icon,
+      .n8n-chat .assistant-icon {
+        color: #ffffff !important;
+        fill: #ffffff !important;
       }
       
       /* Scrollbar styling */
