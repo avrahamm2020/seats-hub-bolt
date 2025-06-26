@@ -146,26 +146,47 @@ const ChatWidget = () => {
         box-shadow: 0 4px 8px rgba(30, 64, 175, 0.3) !important;
       }
       
-      /* AI Assistant Toggle Button - Main Fix */
+      /* AI Assistant Toggle Button - Enhanced Styling */
       .n8n-chat-toggle {
         background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%) !important;
-        border: none !important;
+        border: 2px solid #ffffff !important;
         border-radius: 50% !important;
-        width: 60px !important;
-        height: 60px !important;
-        box-shadow: 0 8px 16px rgba(30, 64, 175, 0.3) !important;
-        transition: all 0.3s ease !important;
+        width: 64px !important;
+        height: 64px !important;
+        box-shadow: 0 8px 25px rgba(30, 64, 175, 0.25), 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        position: relative !important;
+        overflow: hidden !important;
+      }
+      
+      .n8n-chat-toggle::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%) !important;
+        border-radius: 50% !important;
+        opacity: 0 !important;
+        transition: opacity 0.3s ease !important;
       }
       
       .n8n-chat-toggle:hover {
         background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%) !important;
-        transform: translateY(-2px) scale(1.05) !important;
-        box-shadow: 0 12px 20px rgba(30, 64, 175, 0.4) !important;
+        transform: translateY(-3px) scale(1.08) !important;
+        box-shadow: 0 12px 30px rgba(30, 64, 175, 0.35), 0 6px 16px rgba(0, 0, 0, 0.15) !important;
+        border-color: rgba(255, 255, 255, 0.9) !important;
+      }
+      
+      .n8n-chat-toggle:hover::before {
+        opacity: 1 !important;
       }
       
       .n8n-chat-toggle:active {
         background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%) !important;
-        transform: translateY(-1px) scale(1.02) !important;
+        transform: translateY(-1px) scale(1.04) !important;
+        box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4), 0 3px 10px rgba(0, 0, 0, 0.2) !important;
       }
       
       /* Force override any default toggle button styles */
@@ -179,12 +200,19 @@ const ChatWidget = () => {
         background-color: #1e40af !important;
       }
       
-      /* Toggle Icon Styling */
+      /* Toggle Icon Styling - Enhanced */
       .n8n-chat-toggle svg {
-        width: 24px !important;
-        height: 24px !important;
+        width: 26px !important;
+        height: 26px !important;
         color: #ffffff !important;
         fill: #ffffff !important;
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1)) !important;
+        transition: all 0.3s ease !important;
+      }
+      
+      .n8n-chat-toggle:hover svg {
+        transform: scale(1.1) !important;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15)) !important;
       }
       
       .n8n-chat-toggle svg * {
