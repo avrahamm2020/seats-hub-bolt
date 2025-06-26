@@ -52,14 +52,7 @@ const ChatWidget = () => {
         headers: {
           'Content-Type': 'application/json'
         }
-      },
-      initialMessages: [
-        {
-          text: "Welcome to our Community App! 🏛️\n\nI'm here to help you with:\n• 📅 Seat reservations for services\n• 🏠 Hospitality arrangements\n• 🚗 Community ride sharing\n• ❓ General questions about our platform\n\nHow can I assist you today?",
-          sender: 'bot',
-          createdAt: new Date().toISOString()
-        }
-      ]
+      }
     });
 
     // Add custom CSS overrides for additional styling consistency
