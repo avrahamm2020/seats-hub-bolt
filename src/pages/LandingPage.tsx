@@ -37,9 +37,10 @@ function LandingPage() {
               description="Connect hosts and guests for Shabbat and simcha stays in the neighborhood, always for free."
             />
             <FeatureCard
-              icon={<Car className="h-8 w-8 text-blue-600" />}
+              icon={<Car className="h-8 w-8 text-gray-400" />}
               title="Community Rides Pool"
               description="Find or offer rides for daily commutes and events within the community."
+              comingSoon={true}
             />
             <FeatureCard
               icon={<Heart className="h-8 w-8 text-blue-600" />}
@@ -55,9 +56,21 @@ function LandingPage() {
   );
 }
 
-function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
+function FeatureCard({ icon, title, description, comingSoon = false }: { 
+  icon: React.ReactNode; 
+  title: string; 
+  description: string;
+  comingSoon?: boolean;
+}) {
   return (
-    <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+    <div className={`bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow relative ${comingSoon ? 'opacity-75' : ''}`}>
+      {comingSoon && (
+        <div className="absolute top-4 right-4">
+          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+            Coming Soon
+          </span>
+        </div>
+      )}
       <div className="mb-4">{icon}</div>
       <h3 className="text-xl font-semibold text-blue-900 mb-3">{title}</h3>
       <p className="text-gray-600">{description}</p>

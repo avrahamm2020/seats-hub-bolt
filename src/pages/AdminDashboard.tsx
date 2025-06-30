@@ -233,9 +233,10 @@ function AdminDashboard() {
           value="12"
         />
         <StatCard
-          icon={<Car className="h-8 w-8 text-primary-600" />}
+          icon={<Car className="h-8 w-8 text-gray-400" />}
           title="Ride Requests"
-          value="8"
+          value="Coming Soon"
+          comingSoon={true}
         />
       </div>
 
@@ -517,14 +518,26 @@ function AdminDashboard() {
   );
 }
 
-function StatCard({ icon, title, value }: { icon: React.ReactNode; title: string; value: string }) {
+function StatCard({ icon, title, value, comingSoon = false }: { 
+  icon: React.ReactNode; 
+  title: string; 
+  value: string;
+  comingSoon?: boolean;
+}) {
   return (
-    <div className="bg-white p-6 rounded-xl shadow-md">
+    <div className={`bg-white p-6 rounded-xl shadow-md relative ${comingSoon ? 'opacity-75' : ''}`}>
+      {comingSoon && (
+        <div className="absolute top-4 right-4">
+          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+            Coming Soon
+          </span>
+        </div>
+      )}
       <div className="flex items-center mb-4">
         {icon}
         <h3 className="text-lg font-semibold text-gray-800 ml-3">{title}</h3>
       </div>
-      <p className="text-3xl font-bold text-blue-900">{value}</p>
+      <p className={`text-3xl font-bold ${comingSoon ? 'text-gray-500' : 'text-blue-900'}`}>{value}</p>
     </div>
   );
 }

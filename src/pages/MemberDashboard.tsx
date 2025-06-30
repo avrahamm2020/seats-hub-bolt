@@ -27,10 +27,11 @@ function MemberDashboard() {
           action="View Options"
         />
         <ActionCard
-          icon={<Car className="h-8 w-8 text-blue-600" />}
+          icon={<Car className="h-8 w-8 text-gray-400" />}
           title="Ride Sharing"
           description="Connect with others for rides"
-          action="Find Rides"
+          action="Coming Soon"
+          comingSoon={true}
         />
       </div>
 
@@ -45,20 +46,33 @@ function MemberDashboard() {
   );
 }
 
-function ActionCard({ icon, title, description, action }: { 
+function ActionCard({ icon, title, description, action, comingSoon = false }: { 
   icon: React.ReactNode; 
   title: string; 
   description: string;
   action: string;
+  comingSoon?: boolean;
 }) {
   return (
-    <div className="bg-white p-6 rounded-xl shadow-md">
+    <div className={`bg-white p-6 rounded-xl shadow-md relative ${comingSoon ? 'opacity-75' : ''}`}>
+      {comingSoon && (
+        <div className="absolute top-4 right-4">
+          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+            Coming Soon
+          </span>
+        </div>
+      )}
       <div className="flex items-center mb-4">
         {icon}
         <h3 className="text-lg font-semibold text-gray-800 ml-3">{title}</h3>
       </div>
       <p className="text-gray-600 mb-4">{description}</p>
-      <Button variant="outline" size="small">
+      <Button 
+        variant="outline" 
+        size="small"
+        disabled={comingSoon}
+        className={comingSoon ? 'cursor-not-allowed' : ''}
+      >
         {action}
       </Button>
     </div>
