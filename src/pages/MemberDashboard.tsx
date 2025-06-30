@@ -21,10 +21,11 @@ function MemberDashboard() {
           action="Reserve Seat"
         />
         <ActionCard
-          icon={<Users className="h-8 w-8 text-blue-600" />}
+          icon={<Users className="h-8 w-8 text-gray-400" />}
           title="Hospitality"
           description="Find or offer hospitality for Shabbat"
-          action="View Options"
+          action="Coming Soon"
+          comingSoon={true}
         />
         <ActionCard
           icon={<Car className="h-8 w-8 text-gray-400" />}

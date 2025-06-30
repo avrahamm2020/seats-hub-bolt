@@ -32,9 +32,10 @@ function LandingPage() {
               description="Reserve or offer available seats for Shabbat, holidays, and special events."
             />
             <FeatureCard
-              icon={<Users className="h-8 w-8 text-blue-600" />}
+              icon={<Users className="h-8 w-8 text-gray-400" />}
               title="Hospitality Matching"
               description="Connect hosts and guests for Shabbat and simcha stays in the neighborhood, always for free."
+              comingSoon={true}
             />
             <FeatureCard
               icon={<Car className="h-8 w-8 text-gray-400" />}
